@@ -1,0 +1,107 @@
+body{
+	margin:0;
+	padding:0;
+}
+
+
+
+.board-game{
+	text-align:center;
+	
+}
+
+.game-title{
+	width:310px;
+	height:110px;
+}
+
+.hand{
+	width:100px;
+	height:100px;
+}
+
+.rock,.paper,.scissors{
+	position:relative;
+}
+
+.animec{
+	position:relative;
+	animation-name:mymove;
+	animation-duration:2s;
+	animation-fill-mode:forwards;
+}
+@keyframes mymove{
+	0%{right:0px; }
+	100%{ right:190px;}
+}
+
+.animep{
+	position:relative;
+	animation-name:mymovy;
+	animation-duration:2s;
+	animation-fill-mode:forwards;
+
+}
+@keyframes mymovy{
+	0%{left:0px; }
+	100%{ left:190px;}
+}
+.gamingdiv{
+	display:flex;
+	justify-content:space-around;
+}
+
+.player-div,.computer-div{
+	text-align:center;
+	font-family: 'Potta One', cursive;
+	letter-spacing:1px;
+}
+
+.player-div h2, .gamer-div h2 {
+	padding-left:60px;
+}
+
+.playerhands, .computerhands {
+	list-style:none;
+}
+
+
+
+.winnerp, .winnerc, .draw{
+	opacity:0;
+	font-family: 'Potta One', cursive;
+	font-size:1rem;
+}
+
+
+
+.btn{
+	margin:auto;
+	text-align:center;
+	padding-top:15px;
+	width:140px;
+	height:38px;
+	background-color:#279ADF;
+	color:#F6F8F9;
+	font-size:1.2rem;
+	letter-spacing:1px;
+	font-family:arial, sans-serif;
+	border-radius:5%;
+	text-decoration:none;
+	cursor:pointer;
+	transition-duration:1s;
+	}
+
+
+
+.btn:hover{
+	background-color:#F08F1B;
+	animation-name:biggy;
+	animation-duration:0.4s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes biggy{
+	from{width:140px; font-size:1.2rem;}
+	to{width:160px;font-size:1.4rem}
+}
