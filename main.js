@@ -1,3 +1,4 @@
+/*defining variables*/
 let btn = document.querySelector(".btn")
 btn.addEventListener("click", function (){
 let playerChoices = document.querySelectorAll(".playerhands li");
