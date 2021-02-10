@@ -1,25 +1,45 @@
-/*defining variables*/
 let btn = document.querySelector(".btn")
-btn.addEventListener("click", function (){
+let rock = document.querySelector("#rock");
+let paper= document.querySelector("#paper");
+let scissors= document.querySelector("#scissors");
 let playerChoices = document.querySelectorAll(".playerhands li");
 let computerChoices = document.querySelectorAll(".computerhands li");
-//console.log(computerChoices);
-let PrandomNum = Math.floor(Math.random()*3);
 let CrandomNum = Math.floor(Math.random()*3);
 let winnerp = document.querySelector(".winnerp");
 let winnerc = document.querySelector(".winnerc");
 let draw = document.querySelector(".draw");
-
-
-
-//console.log(randomNum);
-
 let computerHand;
 let playerHand;
+let prandomNum;
+
+rock.addEventListener("click", function(){
+	playerHand="rock";
+	prandomNum =0;
+	playerChoices[prandomNum].classList.add("animep");
+	console.log("rock running");
+
+});
+	
+paper.addEventListener("click", function(){
+	playerHand="paper";
+		prandomNum =1;
+		playerChoices[prandomNum].classList.add("animep");
+
+
+});
+
+scissors.addEventListener("click", function(){
+	playerHand="scissors";
+		prandomNum =2;
+		playerChoices[prandomNum].classList.add("animep");
+});	
+
+btn.addEventListener("click", function (){
+	
+
 
 if(CrandomNum===0){
 	computerHand= "rock";
-	
 } else if (CrandomNum ===1){
 	computerHand="paper";
 }else if (CrandomNum ===2){
@@ -28,22 +48,9 @@ if(CrandomNum===0){
 
 computerChoices[CrandomNum].classList.add("animec");
 
-if(PrandomNum===0){
-	playerHand= "rock";
-} else if (PrandomNum ===1){
-	playerHand="paper";
-}else if (PrandomNum ===2){
-	playerHand="scissors"
-};
 
-playerChoices[PrandomNum].classList.add("animep");
 
-console.log(playerHand);
-console.log(computerHand)
-
-if (playerHand===computerHand){
-	draw.style.opacity=1;
-}else if (playerHand==="paper" & computerHand==="rock"){
+/*else if (playerHand==="paper" & computerHand==="rock"){
 	winnerp.style.opacity=1;
 }
 else if (playerHand==="paper" & computerHand==="scissors"){
@@ -78,5 +85,39 @@ else if (computerHand==="scissors" & playerHand==="paper"){
 }
 else if (computerHand==="scissors" & playerHand==="rock"){
 	winnerp.style.opacity=1;
-}	
+}*/
+
+if (playerHand===computerHand){
+	draw.style.opacity=1;
+	return;
+}
+
+if (playerHand==="paper"){ 
+
+	if(computerHand==="rock"){
+		winnerp.style.opacity=1;
+		
+}else {
+	winnerc.style.opacity=1;
+	
+}};
+
+
+if( playerHand === "scissors"){
+	if(computerHand==="paper"){
+		winnerp.style.opacity=1;
+}else{
+	winnerc.style.opacity=1;
+}};
+
+if(playerHand==="rock"){
+	if (computerHand==="scissors"){
+		winnerp.style.opacity=1
+	}else{
+		winnerc.style.opacity=1
+	}
+};
+	
+
+	
 })
